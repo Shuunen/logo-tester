@@ -4,6 +4,7 @@ import { copyToClipboard } from 'shuutils'
 import { Button } from '../components/ui/button'
 import { Paragraph } from '../components/ui/paragraph'
 import { Title } from '../components/ui/title'
+import { replaceObjectUrl } from '../utils/object-url'
 import { Criteria } from './criteria'
 import { FileUpload } from './file-upload'
 
@@ -19,27 +20,29 @@ export function App() {
   const [logoSrc, setLogoSrc] = useState(defaultFiles.logo)
   const [iconSrc, setIconSrc] = useState(defaultFiles.icon)
   const [points, setPoints] = useState<number[]>([])
-  const [hasCopied, setHasCopied] = useState(false)
+  const [copyStatus, setCopyStatus] = useState<'error' | 'idle' | 'success'>('idle')
   function setPointAtIndex(index: number, pointValue: number) {
     setPoints(prev => {
       const newPoints = [...prev]
       newPoints[index] = pointValue
       return newPoints
     })
-    setHasCopied(false)
+    setCopyStatus('idle')
   }
   async function copyPoints() {
-    await copyToClipboard(points.join('\t'))
-    setHasCopied(true)
+    try {
+      await copyToClipboard(points.join('\t'))
+      setCopyStatus('success')
+    } catch {
+      setCopyStatus('error')
+    }
   }
   return (
     <div className="relative mx-auto grid max-w-xl gap-6 p-6">
       <Title className="text-center text-5xl font-light">Logo Tester</Title>
-      <Title level={3} variant="muted">
-        This web app helps you test how your logo and icon will look like in different scenarios.
-      </Title>
-      <FileUpload label="Logo file" name="logo-file" onFile={file => setLogoSrc(URL.createObjectURL(file))} />
-      <FileUpload label="Icon file" name="logo-icon-file" onFile={file => setIconSrc(URL.createObjectURL(file))} />
+      <Paragraph variant="muted">This web app helps you test how your logo and icon will look like in different scenarios.</Paragraph>
+      <FileUpload label="Logo file" name="logo-file" onFile={file => setLogoSrc(replaceObjectUrl(logoSrc, file))} />
+      <FileUpload label="Icon file" name="logo-icon-file" onFile={file => setIconSrc(replaceObjectUrl(iconSrc, file))} />
       <hr />
       <div className="card stripped-light">
         <img alt="Logo on light background" className="logo" src={logoSrc} />
@@ -127,7 +130,8 @@ export function App() {
         <Button disabled={points.length === 0} name="copy" onClick={copyPoints}>
           Copy results to clipboard
         </Button>
-        {hasCopied ? <Paragraph variant="muted">Results copied to clipboard</Paragraph> : undefined}
+        {copyStatus === 'success' ? <Paragraph variant="muted">Results copied to clipboard</Paragraph> : undefined}
+        {copyStatus === 'error' ? <Paragraph variant="error">Copy failed, your browser denied clipboard access</Paragraph> : undefined}
       </div>
     </div>
   )
