@@ -1,0 +1,62 @@
+import { StarIcon } from 'lucide-react'
+import { useState } from 'react'
+import { nbFourth, nbSecond, nbThird } from 'shuutils'
+import { Button } from '../components/ui/button'
+import { Paragraph } from '../components/ui/paragraph'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../components/ui/tooltip'
+import { cn } from '../utils/cn'
+
+type CriteriaProps = {
+  name: string
+  onSelection?: (pointValue: number) => void
+}
+
+const points = [
+  {
+    hint: 'no, not at all',
+    value: nbSecond,
+  },
+  {
+    hint: 'average, okay',
+    value: nbThird,
+  },
+  {
+    hint: 'yes, clearly',
+    value: nbFourth,
+  },
+]
+
+export function Criteria({ name, onSelection }: CriteriaProps) {
+  const [value, setValue] = useState(0)
+  function onClick(pointValue: number) {
+    setValue(pointValue)
+    if (onSelection) onSelection(pointValue)
+  }
+  return (
+    <div className="flex items-center justify-between">
+      <Paragraph>{name}</Paragraph>
+      <div className="relative flex">
+        {points.map(point => (
+          <Tooltip key={point.value}>
+            <TooltipTrigger asChild name={point.hint}>
+              <Button
+                className={cn('h-5 hover:text-yellow-300', {
+                  'text-slate-500': value !== point.value,
+                  'text-yellow-500': point.value <= value,
+                })}
+                name={point.hint}
+                onClick={() => onClick(point.value)}
+                variant="link"
+              >
+                <StarIcon className="size-5" fill={cn({ 'var(--color-yellow-800)': point.value <= value })} />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent className="bg-white dark:bg-stone-900">
+              <Paragraph>{point.hint}</Paragraph>
+            </TooltipContent>
+          </Tooltip>
+        ))}
+      </div>
+    </div>
+  )
+}
