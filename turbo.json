@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "globalDependencies": ["package.json", "pnpm-lock.yaml"],
+  "tasks": {
+    "build:tsc": { "inputs": ["src/**", "tsconfig*.json"] },
+    "build:vite": {
+      "dependsOn": ["build:tsc"],
+      "inputs": ["src/**", "index.html", "public/**", "tsconfig*.json", "vite.config.ts"],
+      "outputs": ["dist/**"]
+    },
+    "lint:format": { "inputs": ["src/**", "e2e/**", ".github/**", ".oxfmtrc.jsonc", "*.{ts,js,json,md,yaml,yml}"] },
+    "lint:issues": { "inputs": ["src/**/*.{ts,tsx}", "e2e/**/*.ts", ".oxlintrc.json", "tsconfig*.json"] },
+    "lint:sources": { "inputs": ["src/**/*.tsx", "src/bin/lint.*.ts"] },
+    "lint:types": { "inputs": ["src/**/*.{ts,tsx}", "tsconfig*.json"] },
+    "test:e2e": { "inputs": ["e2e/**", "playwright.config.ts", "src/**"], "outputs": ["playwright-report/**", "test-results/**"] },
+    "test:unit": { "inputs": ["src/**/*.{ts,tsx}", "vite.config.ts"], "outputs": ["coverage/**"] }
+  }
+}
