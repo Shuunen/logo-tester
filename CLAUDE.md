@@ -15,6 +15,10 @@ Never disable a lint rule without asking the user. Try to fix first, and if too 
 
 Custom project rules live in `src/bin/lint.rules.ts` and run via `pnpm lint:sources`.
 
+## Versioning
+
+`VERSION` holds the version as MAJOR.MINOR.PATCH semver, and must stay in sync with `version` in `package.json`. Bump both in the same commit.
+
 ## Code practices
 
 - **Constants**: camelCase only, never UPPER_SNAKE_CASE
