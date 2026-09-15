@@ -14,6 +14,7 @@ describe(Criteria, () => {
     await userEvent.click(getByTestId('button-yes-clearly'))
     expect(selections).toStrictEqual([3])
   })
+
   it('reports each offered point value', async () => {
     const selections: number[] = []
     const { getByTestId } = render(
@@ -25,6 +26,7 @@ describe(Criteria, () => {
     await userEvent.click(getByTestId('button-average-okay'))
     expect(selections).toStrictEqual([1, 2])
   })
+
   it('stays usable without an onSelection callback', async () => {
     const { getByTestId } = render(
       <TooltipProvider>

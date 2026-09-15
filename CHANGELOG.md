@@ -12,3 +12,4 @@
 - Released the previous object URL when a logo or icon is uploaded again
 - Fixed the heading outline, the intro text is a paragraph instead of an `h3`
 - Lazy-loaded the below-the-fold mock-up images
+- Updated all dev dependencies to their latest versions (vitest 5, TypeScript 7, jest-dom 7)

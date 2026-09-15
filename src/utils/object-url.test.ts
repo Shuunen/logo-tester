@@ -9,6 +9,7 @@ describe(replaceObjectUrl, () => {
     expect(created).toStrictEqual(['blob:fake-one'])
     spy.mockRestore()
   })
+
   it('does not revoke a remote url', () => {
     const revoked: string[] = []
     const file = new File(['logo'], 'logo.png', { type: 'image/png' })
@@ -19,6 +20,7 @@ describe(replaceObjectUrl, () => {
     createSpy.mockRestore()
     revokeSpy.mockRestore()
   })
+
   it('revokes the previous object url', () => {
     const revoked: string[] = []
     const file = new File(['logo'], 'logo.png', { type: 'image/png' })
