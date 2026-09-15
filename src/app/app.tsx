@@ -105,20 +105,20 @@ export function App() {
       <Criteria name="Balanced logo" onSelection={pointValue => setPointAtIndex(16, pointValue)} />
       <hr />
       <div className="card stripped-light grid! grid-cols-3 gap-x-12 px-14! py-12!">
-        <img alt="Amazon logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png" />
-        <img alt="Coca-Cola logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/512px-Coca-Cola_logo.svg.png" />
-        <img alt="LG logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/LG_logo_%282014%29.svg/600px-LG_logo_%282014%29.svg.png" />
-        <img alt="Microsoft logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png" />
-        <img alt="Google logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" />
+        <img alt="Amazon logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png" />
+        <img alt="Coca-Cola logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/512px-Coca-Cola_logo.svg.png" />
+        <img alt="LG logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/LG_logo_%282014%29.svg/600px-LG_logo_%282014%29.svg.png" />
+        <img alt="Microsoft logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png" />
+        <img alt="Google logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" />
         <img alt="Your logo among famous brands" className="my-5 object-contain" src={logoSrc} />
-        <img alt="Spotify logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/2024_Spotify_Logo.svg/langfr-1920px-2024_Spotify_Logo.svg.png" />
-        <img alt="Firefox logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Firefox_logo_and_wordmark_%28horizontal%29%2C_2013.png/800px-Firefox_logo_and_wordmark_%28horizontal%29%2C_2013.png" />
-        <img alt="PayPal logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1920px-PayPal.svg.png" />
+        <img alt="Spotify logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/2024_Spotify_Logo.svg/langfr-1920px-2024_Spotify_Logo.svg.png" />
+        <img alt="Firefox logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Firefox_logo_and_wordmark_%28horizontal%29%2C_2013.png/800px-Firefox_logo_and_wordmark_%28horizontal%29%2C_2013.png" />
+        <img alt="PayPal logo" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1920px-PayPal.svg.png" />
       </div>
       <Criteria name="Unique logo that stands out" onSelection={pointValue => setPointAtIndex(17, pointValue)} />
       <hr />
       <div className="relative">
-        <img alt="Android phone mock-up" className="relative z-10 w-xl" src="https://i.imgur.com/w2dOu18.png" />
+        <img alt="Android phone mock-up" className="relative z-10 w-xl" loading="lazy" src="https://i.imgur.com/w2dOu18.png" />
         <img alt="Icon on Android app" className="icon absolute z-0 object-contain" src={iconSrc} style={imageStyles} />
       </div>
       <Criteria name="Logo as an app icon" onSelection={pointValue => setPointAtIndex(18, pointValue)} />
