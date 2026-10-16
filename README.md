@@ -22,6 +22,7 @@ pnpm check   # types, formatting, lint, build, unit & e2e tests
 - [Boxy Svg](https://boxy-svg.com) : simple & effective svg editor
 - [Bun](https://bun.sh) : super fast runtime for JavaScript and TypeScript
 - [Github](https://github.com) : for all their great work year after year, pushing OSS forward
+- [Knip](https://github.com/webpro/knip) : super tool to find & fix problems
 - [Oxc](https://oxc.rs) : a lovely super-fast collection of JavaScript tools written in Rust
 - [Oxlint](https://oxc.rs) : fast linter
 - [Radix UI](https://www.radix-ui.com) : unstyled accessible primitives
