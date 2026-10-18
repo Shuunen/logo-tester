@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+- Updated all dependencies to their latest versions (shuutils 11, happy-dom 21, oxlint 1.88, oxfmt 0.73)
+- Handled the `Result` returned by shuutils 11 `copyToClipboard`, so a denied clipboard no longer reads as success
+- Moved to pnpm 12.14
+
 ## 1.0.0
 
 - Migrated out of the monorepo into a standalone app

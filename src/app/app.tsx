@@ -30,12 +30,8 @@ export function App() {
     setCopyStatus('idle')
   }
   async function copyPoints() {
-    try {
-      await copyToClipboard(points.join('\t'))
-      setCopyStatus('success')
-    } catch {
-      setCopyStatus('error')
-    }
+    const result = await copyToClipboard(points.join('\t'))
+    setCopyStatus(result.ok ? 'success' : 'error')
   }
   return (
     <div className="relative mx-auto grid max-w-xl gap-6 p-6">
