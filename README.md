@@ -3,11 +3,15 @@
 [![Project license](https://img.shields.io/github/license/Shuunen/logo-tester.svg?color=informational)](https://github.com/Shuunen/logo-tester/blob/master/LICENSE)
 [![Visitors](https://hits.sh/github.com/Shuunen/logo-tester.svg?label=visitors&color=informational)](https://hits.sh/github.com/Shuunen/logo-tester/)
 
+![logo](docs/banner.svg)
+
 > Check how your logo and icon hold up in the scenarios that matter : light, dark, grayscale, inverted, small, as an app icon, next to famous brands.
 
 ## Usage
 
 Upload a logo and an icon, scroll through the scenarios, rate each criteria, then copy the results to your clipboard as a tab-separated line ready to paste into a spreadsheet.
+
+![demo](docs/demo.jpg)
 
 ## Development
 
@@ -35,7 +39,3 @@ pnpm check   # types, formatting, lint, build, unit & e2e tests
 - [V8](https://github.com/demurgos/v8-coverage) : simple & effective cli for code coverage
 - [Vite](https://vite.dev) : super fast frontend tooling
 - [Vitest](https://vitest.dev) : super fast unit testing
-
-## Page views
-
-[![Views Counter](https://views-counter.vercel.app/badge?pageId=Shuunen%2Flogo-tester&leftColor=5c5c5c&rightColor=07a52b&type=total&label=Visitors&style=none)](https://github.com/Kimserey/views-counter)
