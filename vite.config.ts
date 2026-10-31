@@ -16,6 +16,9 @@ export default defineConfig({
     },
   },
   plugins: [react(), tailwindcss(), uniqueMark()],
+  // dedicated ports, so apps never collide when running together
+  preview: { port: 4106, strictPort: true },
+  server: { port: 5106, strictPort: true },
   test: {
     coverage: {
       exclude: ['src/bin/lint.rules.ts', 'src/main.tsx'],
