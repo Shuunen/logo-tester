@@ -31,6 +31,7 @@ pnpm check   # types, formatting, lint, build, unit & e2e tests
 - [Oxlint](https://oxc.rs) : fast linter
 - [Radix UI](https://www.radix-ui.com) : unstyled accessible primitives
 - [React](https://react.dev) : ui library
+- [Repo-checker](https://github.com/Shuunen/repo-checker) : eslint cover /src code and this tool the rest ^^
 - [Shields.io](https://shields.io) : for the nice badges on top of this readme
 - [Shuutils](https://github.com/Shuunen/shuutils) : collection of pure JS utils
 - [Svg Omg](https://jakearchibald.github.io/svgomg/) : the great king of svg file size reduction
