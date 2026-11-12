@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+
+- Added a VS Code colour scheme to tell this project window apart
+
 ## 1.0.1
 
 - Updated all dependencies to their latest versions (shuutils 11, happy-dom 21, oxlint 1.88, oxfmt 0.73)
