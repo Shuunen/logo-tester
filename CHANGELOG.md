@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Added a VS Code colour scheme to tell this project window apart
+- Dropped the redundant `run_install` option from the CI
 
 ## 1.0.1
 
