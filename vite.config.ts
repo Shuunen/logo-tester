@@ -23,6 +23,9 @@ export default defineConfig({
     coverage: {
       exclude: ['src/bin/lint.rules.ts', 'src/main.tsx'],
       provider: 'v8' as const,
+      thresholds: {
+        100: true,
+      },
     },
     environment: 'happy-dom',
     globals: true,

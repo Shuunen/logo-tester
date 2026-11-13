@@ -5,6 +5,7 @@
 - Added a VS Code colour scheme to tell this project window apart
 - Dropped the redundant `run_install` option from the CI
 - Tested the upload, the rating buttons and the button component
+- Required 100% test coverage
 
 ## 1.0.1
 
