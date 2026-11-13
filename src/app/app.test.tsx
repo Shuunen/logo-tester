@@ -96,4 +96,30 @@ describe(App, () => {
     await userEvent.click(getAllByTestId('button-no-not-at-all')[0])
     expect(queryAllByTestId('paragraph-muted').map(node => node.textContent)).not.toContain('Results copied to clipboard')
   })
+
+  it('should rate every criteria', async () => {
+    const copied: string[] = []
+    Object.defineProperty(globalThis.navigator, 'clipboard', {
+      configurable: true,
+      value: {
+        writeText: (text: string) => {
+          copied.push(text)
+          return Promise.resolve()
+        },
+      },
+    })
+    const { getByTestId, getAllByTestId } = renderApp()
+    const buttons = getAllByTestId('button-yes-clearly')
+    await Promise.all(buttons.map(button => userEvent.click(button)))
+    await userEvent.click(getByTestId('button-copy'))
+    expect(copied[0].split('\t')).toHaveLength(buttons.length)
+  })
+
+  it('should display the uploaded logo and icon', async () => {
+    const { getByTestId, getAllByAltText } = renderApp()
+    await userEvent.upload(getByTestId('input-logo-file'), new File(['logo'], 'logo.png', { type: 'image/png' }))
+    await userEvent.upload(getByTestId('input-logo-icon-file'), new File(['icon'], 'icon.png', { type: 'image/png' }))
+    expect(getAllByAltText('Small logo')[0].getAttribute('src')).toContain('blob:')
+    expect(getAllByAltText('Icon only')[0].getAttribute('src')).toContain('blob:')
+  })
 })
