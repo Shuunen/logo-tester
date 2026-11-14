@@ -6,6 +6,7 @@
 - Dropped the redundant `run_install` option from the CI
 - Tested the upload, the rating buttons and the button component
 - Required 100% test coverage
+- Added a description and a theme color to the page
 
 ## 1.0.1
 
