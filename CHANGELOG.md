@@ -7,6 +7,7 @@
 - Tested the upload, the rating buttons and the button component
 - Required 100% test coverage
 - Added a description and a theme color to the page
+- Colored the VS Code window from the theme color: title bar, activity bar, status bar, badges and active tab
 
 ## 1.0.1
 
